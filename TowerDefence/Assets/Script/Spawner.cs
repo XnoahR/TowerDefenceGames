@@ -28,14 +28,14 @@ public class Spawner : MonoBehaviour
     }
 
     IEnumerator WaveAttack(){
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(20);
         WaveStarted = false;
         Debug.Log("Wave End");
     }
     IEnumerator spawn(){
         Instantiate(Enemy,transform.position,transform.rotation);
         delay = true;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         delay = false;
         limiter++;
     }
