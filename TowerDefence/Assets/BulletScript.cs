@@ -13,15 +13,12 @@ Rigidbody2D rb2;
     void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
+        rb2.velocity = transform.right*bulletSpeed*Time.deltaTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(tScript.CurrentEnemyTarget != null){
-       transform.position = Vector2.MoveTowards(transform.position,tScript.enemylist[0].transform.position,150*Time.deltaTime);
-        }
-        else
-        return;
+        
     }
 }
