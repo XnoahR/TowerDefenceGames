@@ -6,6 +6,9 @@ public class BulletScript : MonoBehaviour
 {
 public float bulletSpeed;
 TurretScript tScript;
+
+public EnemyHealth enemyHP;
+Enemy enemy;
 public Transform FP;
 Rigidbody2D rb2;
 
@@ -18,8 +21,9 @@ public void seek(Transform _enemyTarget){
     void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
+        tScript = GetComponent<TurretScript>();
      //   transform.position = Vector2.MoveTowards(transform.position,tScript.CurrentEnemyTarget.transform.position,bulletSpeed);
-        Destroy(gameObject,3f);
+        Destroy(gameObject,10f);
     }
 
     void moveBullet(){
@@ -32,12 +36,13 @@ public void seek(Transform _enemyTarget){
     void Update()
     {
         if(enemyTarget ==  null){
+            Debug.Log("Destroyed");
             Destroy(gameObject);
             return;
         }
 
-        Vector3 direction = enemyTarget.position - transform.position;
-        float distanceFrame= bulletSpeed*Time.deltaTime;
+        Vector2 direction = enemyTarget.position - transform.position;
+        float distanceFrame = bulletSpeed*Time.deltaTime;
 
         if(direction.magnitude <= distanceFrame){
             HitTarget();
@@ -45,8 +50,21 @@ public void seek(Transform _enemyTarget){
         }
         transform.Translate(direction.normalized*distanceFrame,Space.World);
     }
-    
+    public void CheckTarget(Enemy Target){
+        enemy = Target;
+    }
     void HitTarget(){
         Debug.Log("Hit!");
+      //  enemy.Damaged(10);
+      if(enemy != null){
+        enemy.Damaged(15);
+              Destroy(gameObject);
+      }
+      else
+      return;
+      //  Destroy(enemyTarget.gameObject);
     }
+
+    
+
 }

@@ -5,12 +5,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed;
+    public int Health = 100;
+    public int CurrHealth;
     private Waypoints Points;
     private int PointIndex;
     // Start is called before the first frame update
     void Start()
     {
         Points = GameObject.FindGameObjectWithTag("Waypoints").GetComponent<Waypoints>();
+        CurrHealth = Health;
     }
 
     // Update is called once per frame
@@ -26,5 +29,23 @@ public class Enemy : MonoBehaviour
             }
         }
 
+    }
+
+    public void Damaged(int damage){
+
+        CurrHealth = CurrHealth - damage;
+        if(CurrHealth <= 0){
+            CurrHealth = 0;
+            Destroy(gameObject);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Bullet"){
+            
+        }
+    }
+
+    public void Die(){
+        Destroy(gameObject);
     }
 }

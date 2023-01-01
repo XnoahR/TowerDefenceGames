@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         if(WaveStarted){
-            Debug.Log("Wave Start");
+            //Debug.Log("Wave Start");
             StartCoroutine(WaveAttack());
         if(delay == false && limiter <= 10){
                 StartCoroutine(spawn());

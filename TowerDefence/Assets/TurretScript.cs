@@ -32,8 +32,10 @@ public class TurretScript : MonoBehaviour
         }
         CurrentEnemyTarget = enemylist[0];
         target = CurrentEnemyTarget.transform;
+        
         if(canShot)
         StartCoroutine(BulletFire());
+        
     }
 
     private void RotateToTarget(){
@@ -73,6 +75,7 @@ public class TurretScript : MonoBehaviour
     BulletScript Bullet = BulletObj.GetComponent<BulletScript>();
     if(Bullet != null){
         Bullet.seek(target);
+        Bullet.CheckTarget(CurrentEnemyTarget);
     }
     }
     IEnumerator BulletFire(){
