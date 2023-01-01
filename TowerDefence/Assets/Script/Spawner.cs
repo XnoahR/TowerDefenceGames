@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
     public bool delay = false;
     public GameObject Enemy;
     public int limiter = 1;
+    public int abc = 0;
     public bool WaveStarted =false;
     // Start is called before the first frame update
     void Start()

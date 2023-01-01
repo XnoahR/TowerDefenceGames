@@ -136,5 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10ba32a64e0f624690e0af936c92f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 500
+  bulletSpeed: 15
   FP: {fileID: 0}
+  enemyTarget: {fileID: 7891415881971833371, guid: c42d941009cc4b54084720351480cbe9, type: 3}
