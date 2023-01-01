@@ -45,7 +45,7 @@ public class TurretScript : MonoBehaviour
         Vector3 targetPos = CurrentEnemyTarget.transform.position - transform.position;//Mendapatkan jarak dari turret ke target
         float angle = Vector3.SignedAngle(transform.up,targetPos,transform.forward);//Mendapatkan sudut dari turret ke target
         transform.Rotate(0,0,angle);//Melakukan rotasi Z sesuai variable angle 
-     
+       
     }
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;

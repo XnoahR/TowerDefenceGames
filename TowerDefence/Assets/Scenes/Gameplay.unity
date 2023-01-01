@@ -264,6 +264,7 @@ MonoBehaviour:
   CurrentEnemyTarget: {fileID: 0}
   bullet: {fileID: 6754910448593865300, guid: 6d1018388aefbc948a7c153590a904b8, type: 3}
   bulletT: {fileID: 6754910448593865299, guid: 6d1018388aefbc948a7c153590a904b8, type: 3}
+  target: {fileID: 0}
   FP: {fileID: 1730415197}
   canShot: 1
 --- !u!58 &115135777
@@ -341,15 +342,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115135774}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -5.04, y: 1.27, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9, y: -1.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 299521518}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &125433728
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +414,7 @@ MonoBehaviour:
   delay: 0
   Enemy: {fileID: 7891415881971833375, guid: c42d941009cc4b54084720351480cbe9, type: 3}
   limiter: 0
+  abc: 0
   WaveStarted: 0
 --- !u!4 &213466061
 Transform:
@@ -1300,6 +1302,7 @@ MonoBehaviour:
   CurrentEnemyTarget: {fileID: 0}
   bullet: {fileID: 6754910448593865300, guid: 6d1018388aefbc948a7c153590a904b8, type: 3}
   bulletT: {fileID: 6754910448593865299, guid: 6d1018388aefbc948a7c153590a904b8, type: 3}
+  target: {fileID: 0}
   FP: {fileID: 1025683194}
   canShot: 1
 --- !u!58 &1625533321
@@ -1378,7 +1381,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625533319}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 2.13, y: -0.2, z: 0}
+  m_LocalPosition: {x: 6.24, y: 1.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
