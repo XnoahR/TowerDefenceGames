@@ -8,6 +8,7 @@ public class TurretScript : MonoBehaviour
     public Enemy CurrentEnemyTarget;
     public GameObject bullet;
     public Transform bulletT;
+    public Transform target;
     public Transform FP;
     public bool canShot = true;
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class TurretScript : MonoBehaviour
             return;
         }
         CurrentEnemyTarget = enemylist[0];
+        target = CurrentEnemyTarget.transform;
         if(canShot)
         StartCoroutine(BulletFire());
     }
@@ -66,8 +68,15 @@ public class TurretScript : MonoBehaviour
         }
     }
 
+    void BulletShot(){
+    GameObject BulletObj = (GameObject)Instantiate(bullet,FP.position,FP.rotation);
+    BulletScript Bullet = BulletObj.GetComponent<BulletScript>();
+    if(Bullet != null){
+        Bullet.seek(target);
+    }
+    }
     IEnumerator BulletFire(){
-        Instantiate(bullet,FP.position,FP.rotation);
+        BulletShot();
         canShot = false;
         yield return new WaitForSeconds(0.75f);
         canShot = true;

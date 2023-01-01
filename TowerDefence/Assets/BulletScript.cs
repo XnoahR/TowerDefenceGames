@@ -9,13 +9,16 @@ TurretScript tScript;
 public Transform FP;
 Rigidbody2D rb2;
 
-public Enemy enemyTarget;
+public Transform enemyTarget;
 
+public void seek(Transform _enemyTarget){
+    enemyTarget = _enemyTarget;
+}
     // Start is called before the first frame update
     void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
-        transform.position = Vector2.MoveTowards(transform.position,tScript.CurrentEnemyTarget.transform.position,bulletSpeed);
+     //   transform.position = Vector2.MoveTowards(transform.position,tScript.CurrentEnemyTarget.transform.position,bulletSpeed);
         Destroy(gameObject,3f);
     }
 
@@ -28,7 +31,22 @@ public Enemy enemyTarget;
    
     void Update()
     {
-   
+        if(enemyTarget ==  null){
+            Destroy(gameObject);
+            return;
+        }
+
+        Vector3 direction = enemyTarget.position - transform.position;
+        float distanceFrame= bulletSpeed*Time.deltaTime;
+
+        if(direction.magnitude <= distanceFrame){
+            HitTarget();
+            return;
+        }
+        transform.Translate(direction.normalized*distanceFrame,Space.World);
     }
     
+    void HitTarget(){
+        Debug.Log("Hit!");
+    }
 }
