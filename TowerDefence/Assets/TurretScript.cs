@@ -72,7 +72,7 @@ public class TurretScript : MonoBehaviour
 
     void BulletShot(){
     GameObject BulletObj = (GameObject)Instantiate(bullet,FP.position,FP.rotation);
-    Debug.Log("SHOT!!!");
+    Debug.Log("SHOT!");
     BulletScript Bullet = BulletObj.GetComponent<BulletScript>();
     if(Bullet != null){
         Bullet.seek(target);
