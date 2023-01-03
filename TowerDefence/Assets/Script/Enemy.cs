@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public int Health = 100;
     public int CurrHealth;
     private Waypoints Points;
-    private int PointIndex;
+    [SerializeField] private int PointIndex;
     // Start is called before the first frame update
     void Start()
     {

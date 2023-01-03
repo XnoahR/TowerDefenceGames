@@ -25,13 +25,21 @@ public class Spawner : MonoBehaviour
                 StartCoroutine(spawn());
         }
         }
-        
+        WaveEnded(WaveStarted);
     }
 
     IEnumerator WaveAttack(){
         yield return new WaitForSeconds(20);
         WaveStarted = false;
-        Debug.Log("Wave End");
+    }
+
+    void WaveEnded(bool Wave){
+        if(Wave == true){
+            return;
+        }
+        else{
+            Debug.Log("Wave Ended!");
+        }
     }
     IEnumerator spawn(){
         Instantiate(Enemy,transform.position,transform.rotation);
