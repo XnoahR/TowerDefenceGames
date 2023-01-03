@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour
     IEnumerator spawn(){
         Instantiate(Enemy,transform.position,transform.rotation);
         delay = true;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         delay = false;
         limiter++;
     }

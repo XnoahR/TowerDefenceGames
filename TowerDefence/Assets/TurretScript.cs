@@ -49,7 +49,7 @@ public class TurretScript : MonoBehaviour
     }
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position,5);
+        Gizmos.DrawWireSphere(transform.position,3.5f);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -72,6 +72,7 @@ public class TurretScript : MonoBehaviour
 
     void BulletShot(){
     GameObject BulletObj = (GameObject)Instantiate(bullet,FP.position,FP.rotation);
+    Debug.Log("SHOT!");
     BulletScript Bullet = BulletObj.GetComponent<BulletScript>();
     if(Bullet != null){
         Bullet.seek(target);
