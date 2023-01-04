@@ -43,6 +43,8 @@ public void seek(Transform _enemyTarget){
 
         Vector2 direction = enemyTarget.position - transform.position;
         float distanceFrame = bulletSpeed*Time.deltaTime;
+        //Debug.Log(direction.magnitude);
+        //Debug.Log("Bullet speed : " + bulletSpeed*Time.deltaTime);
 
         if(direction.magnitude <= distanceFrame){
             HitTarget();
@@ -54,7 +56,7 @@ public void seek(Transform _enemyTarget){
         enemy = Target;
     }
     void HitTarget(){
-        Debug.Log("Hit!");
+       // Debug.Log("Hit!");
       //  enemy.Damaged(10);
       if(enemy != null){
         enemy.Damaged(15);
