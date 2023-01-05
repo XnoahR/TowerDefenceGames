@@ -8,6 +8,7 @@ public class TurretScript : MonoBehaviour
     public Enemy CurrentEnemyTarget;
     public GameObject bullet;
     public Transform bulletT;
+    public Transform PartToRotate;
     public Transform target;
     public Transform FP;
     public bool canShot = true;

@@ -143,7 +143,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268574974408290618}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.76, y: 0.76, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
@@ -151,7 +151,7 @@ Transform:
   - {fileID: 1268574974710482692}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1268574974408290615
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -236,6 +236,7 @@ MonoBehaviour:
   CurrentEnemyTarget: {fileID: 0}
   bullet: {fileID: 6754910448593865300, guid: 6d1018388aefbc948a7c153590a904b8, type: 3}
   bulletT: {fileID: 6754910448593865299, guid: 6d1018388aefbc948a7c153590a904b8, type: 3}
+  PartToRotate: {fileID: 1268574974710482692}
   target: {fileID: 0}
   FP: {fileID: 1268574973280089159}
   canShot: 1
@@ -284,7 +285,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268574974710482693}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 0.028, y: 0.006, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
@@ -292,7 +293,7 @@ Transform:
   - {fileID: 1268574973164866769}
   m_Father: {fileID: 1268574974408290614}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!212 &1268574974710482695
 SpriteRenderer:
   m_ObjectHideFlags: 0
